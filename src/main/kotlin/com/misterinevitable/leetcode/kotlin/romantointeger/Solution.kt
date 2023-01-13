@@ -1,8 +1,7 @@
 package com.misterinevitable.leetcode.kotlin.romantointeger
 
 fun String.romanToInt() =
-    asSequence()
-        .map { it.romanToInt() }
+    map { it.romanToInt() }
         .zipWithNext { first, second ->
             if (first < second) -first else first
         }
